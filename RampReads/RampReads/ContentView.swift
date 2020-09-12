@@ -15,29 +15,31 @@ struct ContentView: View {
     @State var showCaptureImageView: Bool = false
     
     var body: some View {
-        let newImage = UIImage(contentsOfFile: "/Users/shobhita/lost_hero.jpg")
-        processImage(newImage!)
-        NSLog("DONE")
+//        let newImage = UIImage(contentsOfFile: "/Users/shobhita/lost_hero.jpg")
+//        processImage(newImage!)
+//        NSLog("DONE")
         return ZStack{
             VStack {
                 BookList()
                 Button(action: {
-                  self.showCaptureImageView.toggle()
+                    self.image = nil
+                    self.showCaptureImageView.toggle()
                 }) {
-                    Text("Choose photos")
+                    Text("Take New Photo")
+                        .font(.headline)
                 }
-                image?.resizable()
-                     .frame(width: 250, height: 250)
-                     .clipShape(Circle())
-                     .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                     .shadow(radius: 10)
+                .padding(.all, 15.0)
+                .background(/*@START_MENU_TOKEN@*/Color(hue: 1.0, saturation: 0.015, brightness: 0.92)/*@END_MENU_TOKEN@*/)
             }
-            if (showCaptureImageView) {
-              CaptureImageView(isShown: $showCaptureImageView, image: $image)
-            }
+            .padding(.bottom, 20.0)
+            
+                if (showCaptureImageView) {
+                  CaptureImageView(isShown: $showCaptureImageView, image: $image)
+                }
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

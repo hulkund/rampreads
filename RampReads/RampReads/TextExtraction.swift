@@ -14,31 +14,22 @@ var ocrRequest = VNRecognizeTextRequest(completionHandler: nil)
 
 private func configureOCR() {
     ocrRequest = VNRecognizeTextRequest { (request, error) in
-    guard let observations = request.results as? [VNRecognizedTextObservation] else { return }
-    ocrRequest.recognitionLevel = .accurate
-    ocrRequest.recognitionLanguages = ["en-US", "en-GB"]
-    ocrRequest.usesLanguageCorrection = true
-        
-    var ocrText = ""
+        guard let observations = request.results as? [VNRecognizedTextObservation] else { return }
+        ocrRequest.recognitionLevel = .accurate
+        ocrRequest.recognitionLanguages = ["en-US", "en-GB"]
+        ocrRequest.usesLanguageCorrection = true
+            
+        var ocrText = ""
         for observation in observations {
-            
             let candidates = observation.topCandidates(5)
-            var candidatesString = ""
-            for c in candidates{
-                candidatesString += c.string + "; "
-            }
-            NSLog("\n" + candidatesString)
-            
+
             guard let topCandidate = candidates.first else { return }
                     
-            ocrText += topCandidate.string + "\n"
+            ocrText += topCandidate.string + " "
         }
-                
-//        DispatchQueue.main.async {
-//            self.ocrTextView.text = ocrText
-//            self.scanButton.isEnabled = true
-//        }
-    NSLog("FINAL: " + ocrText)
+        
+        let formattedOcrText = ocrText.replacingOccurrences(of: " ", with: "%%20").lowercased()
+        NSLog(formattedOcrText)
     }
 }
 

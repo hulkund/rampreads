@@ -11,14 +11,14 @@ import SwiftUI
 struct BookList: View {
     var body: some View {
         List {
-            LandmarkRow(landmark: landmarkData[0])
-            LandmarkRow(landmark: landmarkData[1])
+            BookRow(book: BookData[0])
+            BookRow(book: BookData[1])
         }
     }
 }
 
-struct LandmarkList_Previews: PreviewProvider {
+struct BookList_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkList()
+        BookList()
     }
 }

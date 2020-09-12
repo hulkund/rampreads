@@ -7,13 +7,18 @@
 //
 
 import SwiftUI
+import UIKit
+
 
 struct ContentView: View {
     @State var image: Image? = nil
     @State var showCaptureImageView: Bool = false
-
+    
     var body: some View {
-        ZStack{
+        let newImage = UIImage(contentsOfFile: "/Users/shobhita/lost_hero.jpg")
+        processImage(newImage!)
+        NSLog("DONE")
+        return ZStack{
             VStack {
                 BookList()
                 Button(action: {

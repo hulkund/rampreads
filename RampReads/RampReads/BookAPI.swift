@@ -32,10 +32,11 @@ public func viewDidLoad() {
 }
  **/
 
-public func getBookFromTitle(){
+public func getBookFromTitle(searchTerm: String){
     //dispatchGroup.enter()
-    let searchTerm = "flowers+inauthor:keyes"
+//    let searchTerm = "flowers+inauthor:keyes"
     let urlString = "https://www.googleapis.com/books/v1/volumes?q="+searchTerm+"&key="+APIKey
+    print(urlString)
     if let url = URL(string: urlString)
     {
         print("Good URL")

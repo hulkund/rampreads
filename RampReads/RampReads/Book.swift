@@ -10,13 +10,14 @@ import SwiftUI
 import CoreLocation
 
 struct Book: Hashable, Codable {
+    
     var id: Int
     var title: String
     var author: String
-    var rating: Double
+    var rating: Float
     fileprivate var coverImageName: String
     var publishDate: String
     var publisher: String
-    var genres: Array<Any>
+    var genres: Set<String>
     
 }

@@ -9,29 +9,23 @@
 import SwiftUI
 
 struct BookRow: View {
+    var book: Book
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
-                Text("Turtle Rock")
-                    .font(.title)
-
-                HStack(alignment: .top) {
-                    Text("Joshua Tree National Park")
-                        .font(.subheadline)
-                    Spacer()
-                    Text("California")
-                        .font(.subheadline)
-                }
+                Text(book.title)
+                Text(book.author)
             }
             .padding()
-
-            Spacer()
         }
     }
 }
 
 struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
-        BookRow()
+        BookRow(book: BookData[0])
+            .previewLayout(.fixed(width: 300, height: 70))
     }
 }
+
+

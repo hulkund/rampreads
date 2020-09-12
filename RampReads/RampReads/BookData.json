@@ -10,7 +10,147 @@
         "imageName": "harrypotter"
     },
     {
-        "isbn" : "000000",
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000000",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",

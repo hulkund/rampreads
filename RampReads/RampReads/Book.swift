@@ -9,9 +9,9 @@
 import SwiftUI
 import CoreLocation
 
-struct Book: Hashable, Codable {
+struct Book: Hashable, Codable, Identifiable {
     
-    var isbn: String
+    var id: String
     var title: String
     var author: String
     var rating: Float

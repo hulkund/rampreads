@@ -10,11 +10,14 @@ import SwiftUI
 
 struct BookList: View {
     var body: some View {
-        NavigationView {
+        NavigationView{
             List(bookData) { book in
                 BookRow(book: book)
             }
-        }
+        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+        .padding()
+        
+        
     }
 }
 

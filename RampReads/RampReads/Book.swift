@@ -19,5 +19,6 @@ struct Book: Hashable, Codable, Identifiable {
     var publishDate: String
     var publisher: String
     var genres: String
+    var isFavorite: Bool
     
 }

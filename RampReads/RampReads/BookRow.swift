@@ -11,13 +11,20 @@ import SwiftUI
 struct BookRow: View {
     var book: Book
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(book.title)
-                .font(.headline)
-            Text(book.author)
-                .font(.subheadline)
+        HStack{
+            if book.isFavorite{
+                Image(systemName: "star.fill")
+                .imageScale(.medium)
+                .foregroundColor(.yellow)
+            }
+            VStack(alignment: .leading) {
+                Text(book.title)
+                    .font(.headline)
+                Text(book.author)
+                    .font(.subheadline)
+            }
+            
         }
-
     }
 }
 

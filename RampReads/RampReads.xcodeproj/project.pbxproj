@@ -15,6 +15,10 @@
 		EEB4D1C6250C740400ABF874 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB4D1C4250C740400ABF874 /* LaunchScreen.storyboard */; };
 		EEB4D1D1250C740400ABF874 /* RampReadsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4D1D0250C740400ABF874 /* RampReadsTests.swift */; };
 		EEB4D1DC250C740400ABF874 /* RampReadsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4D1DB250C740400ABF874 /* RampReadsUITests.swift */; };
+		EEB4D1EA250C78EA00ABF874 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4D1E9250C78EA00ABF874 /* Book.swift */; };
+		EEB4D1EC250C795700ABF874 /* BookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4D1EB250C795700ABF874 /* BookRow.swift */; };
+		EEB4D1EE250C799300ABF874 /* BookData.json in Resources */ = {isa = PBXBuildFile; fileRef = EEB4D1ED250C799300ABF874 /* BookData.json */; };
+		EEB4D1F0250C7C0700ABF874 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4D1EF250C7C0700ABF874 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		EEB4D1D7250C740400ABF874 /* RampReadsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RampReadsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB4D1DB250C740400ABF874 /* RampReadsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RampReadsUITests.swift; sourceTree = "<group>"; };
 		EEB4D1DD250C740400ABF874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEB4D1E9250C78EA00ABF874 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		EEB4D1EB250C795700ABF874 /* BookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRow.swift; sourceTree = "<group>"; };
+		EEB4D1ED250C799300ABF874 /* BookData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BookData.json; sourceTree = "<group>"; };
+		EEB4D1EF250C7C0700ABF874 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		EEB4D1B8250C740300ABF874 /* RampReads */ = {
 			isa = PBXGroup;
 			children = (
+				EEB4D1E9250C78EA00ABF874 /* Book.swift */,
 				EEB4D1B9250C740300ABF874 /* AppDelegate.swift */,
 				EEB4D1BB250C740300ABF874 /* SceneDelegate.swift */,
 				EEB4D1BD250C740300ABF874 /* ContentView.swift */,
@@ -106,6 +115,9 @@
 				EEB4D1C4250C740400ABF874 /* LaunchScreen.storyboard */,
 				EEB4D1C7250C740400ABF874 /* Info.plist */,
 				EEB4D1C1250C740400ABF874 /* Preview Content */,
+				EEB4D1EB250C795700ABF874 /* BookRow.swift */,
+				EEB4D1ED250C799300ABF874 /* BookData.json */,
+				EEB4D1EF250C7C0700ABF874 /* Data.swift */,
 			);
 			path = RampReads;
 			sourceTree = "<group>";
@@ -242,6 +254,7 @@
 			files = (
 				EEB4D1C6250C740400ABF874 /* LaunchScreen.storyboard in Resources */,
 				EEB4D1C3250C740400ABF874 /* Preview Assets.xcassets in Resources */,
+				EEB4D1EE250C799300ABF874 /* BookData.json in Resources */,
 				EEB4D1C0250C740400ABF874 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEB4D1EA250C78EA00ABF874 /* Book.swift in Sources */,
+				EEB4D1F0250C7C0700ABF874 /* Data.swift in Sources */,
+				EEB4D1EC250C795700ABF874 /* BookRow.swift in Sources */,
 				EEB4D1BA250C740300ABF874 /* AppDelegate.swift in Sources */,
 				EEB4D1BC250C740300ABF874 /* SceneDelegate.swift in Sources */,
 				EEB4D1BE250C740300ABF874 /* ContentView.swift in Sources */,

@@ -20,6 +20,7 @@
 		EEB4D1EC250C795700ABF874 /* BookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4D1EB250C795700ABF874 /* BookRow.swift */; };
 		EEB4D1EE250C799300ABF874 /* BookData.json in Resources */ = {isa = PBXBuildFile; fileRef = EEB4D1ED250C799300ABF874 /* BookData.json */; };
 		EEB4D1F0250C7C0700ABF874 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4D1EF250C7C0700ABF874 /* Data.swift */; };
+		EEB4D1F4250C938F00ABF874 /* BookDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4D1F3250C938F00ABF874 /* BookDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		EEB4D1EB250C795700ABF874 /* BookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRow.swift; sourceTree = "<group>"; };
 		EEB4D1ED250C799300ABF874 /* BookData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BookData.json; sourceTree = "<group>"; };
 		EEB4D1EF250C7C0700ABF874 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		EEB4D1F3250C938F00ABF874 /* BookDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				EEB4D1E9250C78EA00ABF874 /* Book.swift */,
 				EEB4D1B9250C740300ABF874 /* AppDelegate.swift */,
+				EEB4D1F3250C938F00ABF874 /* BookDetail.swift */,
 				EEB4D1BB250C740300ABF874 /* SceneDelegate.swift */,
 				EEB4D1BD250C740300ABF874 /* ContentView.swift */,
 				EEB4D1BF250C740400ABF874 /* Assets.xcassets */,
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEB4D1EA250C78EA00ABF874 /* Book.swift in Sources */,
+				EEB4D1F4250C938F00ABF874 /* BookDetail.swift in Sources */,
 				EEB4D1F0250C7C0700ABF874 /* Data.swift in Sources */,
 				EEB4D1EC250C795700ABF874 /* BookRow.swift in Sources */,
 				EEB4D1BA250C740300ABF874 /* AppDelegate.swift in Sources */,

@@ -9,13 +9,23 @@
 import SwiftUI
 
 struct BookList: View {
+    @State var showFavoritesOnly = false
     var body: some View {
-        NSLog("%@",bookData)
-        return NavigationView{
-            List(bookData) { book in NavigationLink (destination: BookDetail(book: book)) {
-                BookRow(book: book)
+        NavigationView{
+            List {
+                Toggle(isOn: $showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+                
+                ForEach(bookData) { book in
+                    if !self.showFavoritesOnly || book.isFavorite {
+                        NavigationLink(destination: BookDetail(book : book)) {
+                            BookRow(book : book)
+                        }
+                    }
                 }
             }
+            .navigationBarTitle(Text("Reading List"))
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
         .padding()
         

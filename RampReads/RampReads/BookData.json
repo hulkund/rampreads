@@ -10,7 +10,27 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000001",
+        "title": "HP",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000002",
+        "title": "Harry pOTer",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter"
+    },
+    {
+        "id" : "000003",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -20,7 +40,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000004",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -30,7 +50,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000005",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -40,7 +60,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000006",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -50,7 +70,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000007",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -60,7 +80,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000008",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -70,7 +90,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000009",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -80,7 +100,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000010",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -90,7 +110,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000011",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -100,7 +120,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000012",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -110,7 +130,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000013",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -120,7 +140,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
+        "id" : "000014",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",
@@ -130,27 +150,7 @@
         "imageName": "harrypotter"
     },
     {
-        "id" : "000000",
-        "title": "Harry Potter",
-        "genres": "Fantasy",
-        "author": "JK Rowling",
-        "rating":5,
-        "publishDate":"1997",
-        "publisher":"Bloomberg",
-        "imageName": "harrypotter"
-    },
-    {
-        "id" : "000000",
-        "title": "Harry Potter",
-        "genres": "Fantasy",
-        "author": "JK Rowling",
-        "rating":5,
-        "publishDate":"1997",
-        "publisher":"Bloomberg",
-        "imageName": "harrypotter"
-    },
-    {
-        "id" : "000000",
+        "id" : "000015",
         "title": "Harry Potter",
         "genres": "Fantasy",
         "author": "JK Rowling",

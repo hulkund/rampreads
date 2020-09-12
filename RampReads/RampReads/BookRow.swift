@@ -11,21 +11,19 @@ import SwiftUI
 struct BookRow: View {
     var book: Book
     var body: some View {
-
         VStack(alignment: .leading) {
             Text(book.title)
                 .font(.headline)
             Text(book.author)
                 .font(.subheadline)
         }
-        .padding()
 
     }
 }
 
 struct BookRow_Previews: PreviewProvider {
     static var previews: some View {
-        BookRow(book: bookData[0])
+        BookRow(book: bookData[1])
     }
 }
 

@@ -10,7 +10,8 @@ import SwiftUI
 
 struct BookList: View {
     var body: some View {
-        NavigationView{
+        NSLog("%@",bookData)
+        return NavigationView{
             List(bookData) { book in NavigationLink (destination: BookDetail(book: book)) {
                 BookRow(book: book)
                 }

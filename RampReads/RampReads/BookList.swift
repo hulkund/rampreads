@@ -10,9 +10,10 @@ import SwiftUI
 
 struct BookList: View {
     var body: some View {
-        List {
-            BookRow(book: BookData[0])
-            BookRow(book: BookData[1])
+        NavigationView {
+            List(bookData) { book in
+                BookRow(book: book)
+            }
         }
     }
 }

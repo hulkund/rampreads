@@ -11,18 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            VStack(alignment: .leading) {
-                Text("WELCOME TO RAMPREADS")
-                    .font(.largeTitle)
-                Text("BY SHOBHITA AND NEHA")
-                    .font(.subheadline)
-                    .multilineTextAlignment(.center)
-                    .accentColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-            }
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                Text("Add New Book")
-            }
-            Spacer()
+            BookList()
         }
     }
 }

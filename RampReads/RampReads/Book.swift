@@ -11,13 +11,13 @@ import CoreLocation
 
 struct Book: Hashable, Codable {
     
-    var id: Int
+    var isbn: String
     var title: String
     var author: String
     var rating: Float
-    fileprivate var coverImageName: String
+//    fileprivate var coverImageName: String
     var publishDate: String
     var publisher: String
-    var genres: Set<String>
+    var genres: String
     
 }

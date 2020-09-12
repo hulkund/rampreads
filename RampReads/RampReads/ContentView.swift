@@ -19,7 +19,6 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
                     .accentColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
             }
-            Spacer()
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                 Text("Add New Book")
             }

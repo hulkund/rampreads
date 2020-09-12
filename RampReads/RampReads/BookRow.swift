@@ -9,29 +9,29 @@
 import SwiftUI
 
 struct BookRow: View {
+    var book: Book
     var body: some View {
-        VStack {
-            VStack(alignment: .leading) {
-                Text("Turtle Rock")
-                    .font(.title)
-
-                HStack(alignment: .top) {
-                    Text("Joshua Tree National Park")
-                        .font(.subheadline)
-                    Spacer()
-                    Text("California")
-                        .font(.subheadline)
-                }
+        HStack{
+            if book.isFavorite{
+                Image(systemName: "star.fill")
+                .imageScale(.medium)
+                .foregroundColor(.yellow)
             }
-            .padding()
-
-            Spacer()
+            VStack(alignment: .leading) {
+                Text(book.title)
+                    .font(.headline)
+                Text(book.author)
+                    .font(.subheadline)
+            }
+            
         }
     }
 }
 
-struct LandmarkDetail_Previews: PreviewProvider {
+struct BookRow_Previews: PreviewProvider {
     static var previews: some View {
-        BookRow()
+        BookRow(book: bookData[1])
     }
 }
+
+

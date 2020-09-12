@@ -1,29 +1,79 @@
 [
     {
-        "name": "Turtle Rock",
-        "category": "Featured",
-        "city": "Twentynine Palms",
-        "state": "California",
-        "id": 1001,
-        "park": "Joshua Tree National Park",
-        "coordinates": {
-            "longitude": -116.166868,
-            "latitude": 34.011286
-        },
-        "imageName": "turtlerock"
+        "id" : "000000",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter",
+        "isFavorite": true
     },
     {
-        "name": "Silver Salmon Creek",
-        "category": "Lakes",
-        "city": "Port Alsworth",
-        "state": "Alaska",
-        "id": 1002,
-        "park": "Lake Clark National Park and Preserve",
-        "coordinates": {
-            "longitude": -152.665167,
-            "latitude": 59.980167
-        },
-        "imageName": "silversalmoncreek"
+        "id" : "000001",
+        "title": "HP",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter",
+        "isFavorite": false
     },
-    ...
+    {
+        "id" : "000002",
+        "title": "Harry pOTer",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter",
+        "isFavorite": false
+    },
+    {
+        "id" : "000003",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter",
+        "isFavorite": false
+    },
+    {
+        "id" : "000004",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter",
+        "isFavorite": false
+    },
+    {
+        "id" : "000005",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter",
+        "isFavorite": false
+    },
+    {
+        "id" : "000006",
+        "title": "Harry Potter",
+        "genres": "Fantasy",
+        "author": "JK Rowling",
+        "rating":5,
+        "publishDate":"1997",
+        "publisher":"Bloomberg",
+        "imageName": "harrypotter",
+        "isFavorite": false
+    }
 ]

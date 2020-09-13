@@ -40,9 +40,18 @@ struct BookDetail: View {
                     .fontWeight(.semibold)
                 Text("Book Rating: " + String(book.rating))
                     .font(.headline)
+                //replace with book.imageLink
+                AsyncImage(
+                           url: URL(string: "http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")!
+                            ,
+                           placeholder: Text("Loading ...")
+                )
+                    .frame(width: 250.0, height: 400.0)
+                Text(book.description).font(.body)
                 Spacer()
             }
             .padding()
+            
             Spacer()
         }
 //        .navigationBarTitle(Text(book.title), displayMode: .inline)

@@ -23,7 +23,6 @@ func getBookFromTitle(searchTerm: String, possibleBooks: possibleData) {
         URLSession.shared.dataTask(with: url){ jsonData, res, err in
             if let jsonData = jsonData {
                 print("Now to start JSON decoding..")
-                print(jsonData)
                 let decoder = JSONDecoder()
                 if let json = try? decoder.decode(Welcome.self, from:jsonData) {
                     print("Decoded!")
@@ -48,9 +47,11 @@ func getBookFromTitle(searchTerm: String, possibleBooks: possibleData) {
                     }
 
                         DispatchQueue.main.async {
-                            for book in bookArray{
-                                possibleBooks.possibleBooks.append(book)
-                            }
+//                            if possibleBooks.possibleBooks.count == 0{
+                                for book in bookArray{
+                                    possibleBooks.possibleBooks.append(book)
+                                }
+//                            }
                         }
 
                     

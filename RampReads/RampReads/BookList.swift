@@ -34,12 +34,14 @@ struct BookList: View {
     }
     
     var body: some View {
-        if(processSearch){
+        if((possibleBooks.possibleBooks.count == 0)  && processSearch) {
             getBookFromTitle(searchTerm: searchTerm, possibleBooks: possibleBooks)
+            processSearch = false
         }
         if(possibleBooks.possibleBooks.count > 0){
             print("JSON PARSING WORKED")
             print(self.possibleBooks.possibleBooks)
+            processSearch = false
         }
         return ZStack {
             VStack {

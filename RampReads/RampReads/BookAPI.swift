@@ -35,14 +35,13 @@ func getBookFromTitle(searchTerm: String, possibleBooks: possibleData, userData:
                                 title: item.volumeInfo.title,
                                 author: item.volumeInfo.authors,
                                 rating: -1.0,
-                                description: "DESCRIPTION",
+                                description: item.volumeInfo.description ?? "",
                                 publishDate: item.volumeInfo.publishedDate ?? "N/A",
                                 publisher: item.volumeInfo.publisher ?? "N/A?",
                                 genres: item.volumeInfo.categories ?? ["N/A"],
                                 isFavorite: false,
                                 pageCount: item.volumeInfo.pageCount ?? -1,
                                 imageLink: item.volumeInfo.imageLinks.thumbnail ?? ""
-                                description: item.volumeInfo.description
                             ))
                         }
                     }
@@ -93,7 +92,7 @@ public struct Item: Codable {
 public struct VolumeInfo: Codable {
     let title: String
     let authors: [String]
-    let publisher, publishedDate, volumeInfoDescription: String?
+    let publisher, publishedDate: String?
     let pageCount: Int?
     let printType: String?
     let categories: [String]?
@@ -103,12 +102,10 @@ public struct VolumeInfo: Codable {
     let imageLinks: ImageLinks
     let language: String?
     let previewLink: String?
-    let infoLink, canonicalVolumeLink: String
-    let description: String
+    let description: String?
     enum CodingKeys: String, CodingKey {
         case title, authors, publisher, publishedDate
-        case volumeInfoDescription = "description"
-        case pageCount, printType, categories, maturityRating, allowAnonLogging, contentVersion,  imageLinks, language, previewLink, infoLink, canonicalVolumeLink
+        case description, pageCount, printType, categories, maturityRating, allowAnonLogging, contentVersion,  imageLinks, language, previewLink
     }
 }
 

@@ -10,7 +10,9 @@
         "publisher":"Bloomberg",
         "isFavorite": true,
         "pageCount":100,
-        "imageLink":"http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        "imageLink":"http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description":"Magic"
+        
     },
     {
         "id" : "000001",
@@ -23,7 +25,8 @@
         "publisher":"Bloomberg",
         "isFavorite": false,
         "pageCount":100,
-        "imageLink":"http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        "imageLink":"http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "description":"fantasy"
     }
 ]
 

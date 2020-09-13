@@ -9,25 +9,52 @@
 import SwiftUI
 
 struct BookDetail: View {
+    @EnvironmentObject var userData: UserData
     var book: Book
+    var bookIndex: Int {
+        userData.books.firstIndex(where: { $0.id == book.id })!
+    }
     var body: some View {
 
         VStack {
-            VStack(alignment: .leading) {
-                HStack(alignment: .top) {
+            VStack(alignment: .center) {
+                HStack(alignment: .center) {
+                    Button(action: {
+                        self.userData.books[self.bookIndex].isFavorite.toggle()
+                    }) {
+                        if self.userData.books[self.bookIndex].isFavorite {
+                            Image(systemName: "star.fill")
+                                .foregroundColor(Color.yellow)
+                        } else {
+                            Image(systemName: "star")
+                                .foregroundColor(Color.gray)
+                        }
+                    }
+                    
                     Text(book.title)
-                        .font(.subheadline)
-                    Spacer()
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
                 }
                 Text(book.author)
-                    .font(.subheadline)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                Text("Book Rating: " + String(book.rating))
+                    .font(.headline)
+                //replace with book.imageLink
+                AsyncImage(
+                           url: URL(string: "http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")!
+                            ,
+                           placeholder: Text("Loading ...")
+                )
+                    .frame(width: 250.0, height: 400.0)
+                Text(book.description).font(.body)
                 Spacer()
-                Text(String(book.rating))
             }
             .padding()
+            
             Spacer()
         }
-        .navigationBarTitle(Text(book.title), displayMode: .inline)
+//        .navigationBarTitle(Text(book.title), displayMode: .inline)
     }
 }
 

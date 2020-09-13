@@ -15,6 +15,7 @@ public struct Book:  Codable, Identifiable {
     var title: String
     var author: [String]
     var rating: Float?
+    var description: String
 //    fileprivate var coverImageName: String
     var publishDate: String?
     var publisher: String?

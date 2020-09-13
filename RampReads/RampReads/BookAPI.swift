@@ -42,6 +42,7 @@ func getBookFromTitle(searchTerm: String, possibleBooks: possibleData, userData:
                                 isFavorite: false,
                                 pageCount: item.volumeInfo.pageCount ?? -1,
                                 imageLink: item.volumeInfo.imageLinks.thumbnail ?? ""
+                                description: item.volumeInfo.description
                             ))
                         }
                     }
@@ -103,6 +104,7 @@ public struct VolumeInfo: Codable {
     let language: String?
     let previewLink: String?
     let infoLink, canonicalVolumeLink: String
+    let description: String
     enum CodingKeys: String, CodingKey {
         case title, authors, publisher, publishedDate
         case volumeInfoDescription = "description"

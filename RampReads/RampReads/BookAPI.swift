@@ -7,14 +7,12 @@
 //
 var APIKey = "AIzaSyCJrwcCX--7aHrz8LIfh0p9Bu7zPHT_sBE"
 import Foundation
-
+public var bookArray : [Book] = []
 
 //let dispatchGroup = DispatchGroup()
 import UIKit
 
-
-
-public func getBookFromTitle(searchTerm: String){
+public func getBookFromTitle(searchTerm: String) -> Array<Book> {
     //dispatchGroup.enter()
 //    let searchTerm = "flowers+inauthor:keyes"
     let urlString = "https://www.googleapis.com/books/v1/volumes?q="+searchTerm+"&key="+APIKey
@@ -24,13 +22,27 @@ public func getBookFromTitle(searchTerm: String){
         print("Good URL")
         URLSession.shared.dataTask(with: url){ data, res, err in
             if let data = data {
-                print(data)
                 print("Now to start JSON decoding..")
-                //if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
                 let decoder = JSONDecoder()
                 if let json = try? decoder.decode(Welcome.self, from:data) {
-                    print("hello")
-                    print(json.items[0].volumeInfo.title)
+                    print("Decoded!")
+                    var i = 0
+                    for item in json.items {
+                        if i < 5 {
+                            i+=1
+                            bookArray.append(Book(
+                                id: "001",
+                                title: item.volumeInfo.title,
+                                author: item.volumeInfo.authors,
+                                publishDate: item.volumeInfo.publishedDate,
+                                publisher: item.volumeInfo.publisher,
+                                genres: item.volumeInfo.categories,
+                                isFavorite: false,
+                                pageCount: item.volumeInfo.pageCount
+                                //imageLink: item.volumeInfo.imageLinks.thumbnail
+                            ))
+                        }
+                    }
                 }
                 else {
                     print("Bad Json Decoding")
@@ -42,6 +54,7 @@ public func getBookFromTitle(searchTerm: String){
     else {
         print("Bad URL")
     }
+    return bookArray
 }
 
 
@@ -52,14 +65,14 @@ public func getBookFromTitle(searchTerm: String){
 
 
 // MARK: - Welcome
-struct Welcome: Codable {
+public struct Welcome: Codable {
     let kind: String?
     let totalItems: Int?
     let items: [Item]
 }
 
 // MARK: - Item
-struct Item: Codable {
+public struct Item: Codable {
     let kind, id, etag: String
     let selfLink: String?
     let volumeInfo: VolumeInfo
@@ -67,7 +80,7 @@ struct Item: Codable {
 
 
 // MARK: - VolumeInfo
-struct VolumeInfo: Codable {
+public struct VolumeInfo: Codable {
     let title: String
     let authors: [String]
     let publisher, publishedDate, volumeInfoDescription: String
@@ -89,7 +102,7 @@ struct VolumeInfo: Codable {
 }
 
 // MARK: - ImageLinks
-struct ImageLinks: Codable {
+public struct ImageLinks: Codable {
     let smallThumbnail, thumbnail: String
 }
 

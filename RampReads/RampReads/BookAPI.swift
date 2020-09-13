@@ -7,12 +7,12 @@
 //
 var APIKey = "AIzaSyCJrwcCX--7aHrz8LIfh0p9Bu7zPHT_sBE"
 import Foundation
-public var bookArray : [Book] = []
+var bookArray : [Book] = []
 
 //let dispatchGroup = DispatchGroup()
 import UIKit
 
-public func getBookFromTitle(searchTerm: String) -> Array<Book> {
+func getBookFromTitle(searchTerm: String) -> Array<Book> {
     //dispatchGroup.enter()
 //    let searchTerm = "flowers+inauthor:keyes"
     let urlString = "https://www.googleapis.com/books/v1/volumes?q="+searchTerm+"&key="+APIKey
@@ -34,12 +34,13 @@ public func getBookFromTitle(searchTerm: String) -> Array<Book> {
                                 id: "001",
                                 title: item.volumeInfo.title,
                                 author: item.volumeInfo.authors,
+                                description: "DESCRIPTION",
                                 publishDate: item.volumeInfo.publishedDate,
                                 publisher: item.volumeInfo.publisher,
                                 genres: item.volumeInfo.categories,
                                 isFavorite: false,
-                                pageCount: item.volumeInfo.pageCount
-                                //imageLink: item.volumeInfo.imageLinks.thumbnail
+                                pageCount: item.volumeInfo.pageCount,
+                                imageLink: item.volumeInfo.imageLinks.thumbnail
                             ))
                         }
                     }

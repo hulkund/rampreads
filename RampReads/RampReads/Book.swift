@@ -9,19 +9,19 @@
 import SwiftUI
 import CoreLocation
 
-public struct Book:  Codable, Identifiable {
+struct Book:  Codable, Identifiable {
     
     var id: String
     var title: String
     var author: [String]
-    var rating: Float?
+    var rating: Float
     var description: String
 //    fileprivate var coverImageName: String
-    var publishDate: String?
-    var publisher: String?
-    var genres: [String]?
+    var publishDate: String
+    var publisher: String
+    var genres: [String]
     var isFavorite: Bool
-    var pageCount: Int?
-    var imageLink: ImageLinks?
+    var pageCount: Int
+    var imageLink: ImageLinks
     
 }

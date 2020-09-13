@@ -21,8 +21,8 @@ var bookData: [Book] = load("BookData.json")
 
 func addNewBook(data: UserData) -> Void {
     NSLog("Adding new book")
-    let newBook = Book(id: data.getNextID(), title: "Game of Thrones", author: "martin", rating: 4.5, description: "DESCRIPTION", publishDate: "2000", publisher: "Random House", genres: "Fantasy", isFavorite: false)
-    data.books.append(newBook)
+//    let newBook = Book(id: data.getNextID(), title: "Game of Thrones", author: "martin", rating: 4.5, description: "DESCRIPTION", publishDate: "2000", publisher: "Random House", genres: "Fantasy", isFavorite: false)
+//    data.books.append(newBook)
 }
 
 func deleteBook(data: UserData, bookIndex: Int) -> Void {

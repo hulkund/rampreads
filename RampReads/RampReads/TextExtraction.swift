@@ -19,7 +19,7 @@ var ocrRequest = VNRecognizeTextRequest(completionHandler: nil)
 
 struct ImageProcessor {
     var userDataList: UserData
-    @Binding var searchTerm: String
+    @EnvironmentObject var possibleData: possibleData
     
     private func configureOCR() {
         ocrRequest = VNRecognizeTextRequest { (request, error) in
@@ -47,8 +47,8 @@ struct ImageProcessor {
             if formattedOcrText != nil{
                 let searchTerm = formattedOcrText!
                 print("Self search term " + searchTerm)
-                self.searchTerm = searchTerm
-                print("Self search term " + self.searchTerm)
+                self.possibleData.searchTerm = searchTerm
+                print("Self search term " + self.possibleData.searchTerm)
                 //preview books and choose book
                 //addNewBook(data: self.userDataList)
             } else {
@@ -75,8 +75,8 @@ struct ImageProcessor {
         do {
             try requestHandler.perform([ocrRequest])
             print("HERE")
-            print(self.searchTerm)
-            return self.searchTerm
+            print(self.possibleData.searchTerm)
+            return self.possibleData.searchTerm
         } catch let error {
             print(error)
         }

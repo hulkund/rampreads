@@ -13,7 +13,7 @@ final class UserData: ObservableObject  {
     @Published var showFavoritesOnly = false
     @Published var books = bookData
     
-    func getNextID() -> String {
+    func getNextID() -> Int{
         var bookID = Int(books[books.count - 1].id)! + 1
         var match = true
         while match{
@@ -25,6 +25,6 @@ final class UserData: ObservableObject  {
                 }
             }
         }
-        return String(bookID)
+        return bookID
     }
 }

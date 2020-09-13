@@ -11,16 +11,14 @@ import SwiftUI
 class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
   @Binding var isCoordinatorShown: Bool
   @Binding var imageInCoordinator: UIImage?
-  @Binding var searchTerm: String
-  @Binding var doSearch: Bool
   @EnvironmentObject var data: UserData
+    @EnvironmentObject var possibleData: possibleData
     
-    init(isShown: Binding<Bool>, image: Binding<UIImage?>, searchTerm: Binding<String>, doSearch: Binding<Bool>, data: EnvironmentObject<UserData>) {
+    init(isShown: Binding<Bool>, image: Binding<UIImage?>, data: EnvironmentObject<UserData>, possibleData: EnvironmentObject<possibleData>) {
     _isCoordinatorShown = isShown
     _imageInCoordinator = image
     _data = data
-    _searchTerm = searchTerm
-    _doSearch = doSearch
+    _possibleData = possibleData
   }
     
   func imagePickerController(_ picker: UIImagePickerController,
@@ -28,10 +26,10 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
      guard let unwrapImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
      imageInCoordinator = unwrapImage
      isCoordinatorShown = false
-    let imageProcessor = ImageProcessor(userDataList: data, searchTerm: $searchTerm)
+    let imageProcessor = ImageProcessor(userDataList: data, possibleData: _possibleData)
     var searchTerm = imageProcessor.processImage(image: unwrapImage)
-    self.searchTerm = searchTerm
-    self.doSearch = true
+    self.possibleData.searchTerm = searchTerm
+    self.possibleData.processSearch = true
   }
   
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

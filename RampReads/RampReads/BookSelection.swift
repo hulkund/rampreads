@@ -12,24 +12,35 @@ import Vision
 import UIKit
 
 struct BookSelection: View {
-    @Binding var isPresented: Bool
     var userData: UserData
     var books: possibleData
     
     var body: some View {
-        List{
-            ForEach(books.possibleBooks) { book in
-               Button(action: {
-                    self.userData.books.append(book)
-//                    self.books.possibleBooks.removeAll()
-                    self.isPresented = false
-                }) {
-                    Text(book.title)
-                        .font(.headline)
+        VStack{
+            List{
+                ForEach(books.possibleBooks) { book in
+                   Button(action: {
+                        self.userData.books.append(book)
+                        self.books.possibleBooks.removeAll()
+                        self.books.showingNewUserView = false
+                    }) {
+                        HStack{
+                            Text(book.title)
+                                .font(.headline)
+                            Text(book.author.joined(separator: ", "))
+                        }
+                    }
                 }
-                
             }
-        }
+        
+        Button(action: {
+            self.books.possibleBooks.removeAll()
+            self.books.showingNewUserView = false
+        }) {
+            Text("Cancel")
+        }.padding(.bottom, 20)
+        }.padding(.vertical, 10)
     }
 }
+
 

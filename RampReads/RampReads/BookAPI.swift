@@ -31,7 +31,7 @@ func getBookFromTitle(searchTerm: String, possibleBooks: possibleData, userData:
                         if i < 5 {
                             i+=1
                             bookArray.append(Book(
-                                id: "001",
+                                id: String(userData.getNextID() + i),
                                 title: item.volumeInfo.title,
                                 author: item.volumeInfo.authors,
                                 rating: -1.0,
@@ -48,7 +48,6 @@ func getBookFromTitle(searchTerm: String, possibleBooks: possibleData, userData:
 
                         DispatchQueue.main.async {
 //                            if possibleBooks.possibleBooks.count == 0{
-                            userData.books.append(bookArray[0])
                             for book in bookArray{
                                 possibleBooks.possibleBooks.append(book)
                             }

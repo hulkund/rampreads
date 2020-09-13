@@ -42,7 +42,7 @@ struct BookDetail: View {
                     .font(.headline)
                 //replace with book.imageLink
                 AsyncImage(
-                           url: URL(string: "http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")!
+                    url: URL(string: book.imageLink)!
                             ,
                            placeholder: Text("Loading ...")
                 )

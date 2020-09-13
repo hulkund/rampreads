@@ -22,7 +22,7 @@ struct BookList: View {
     @State var showCaptureImageView: Bool = false
     @State var processSearch: Bool
     @State var searchTerm: String
-    @State var showingNewUserView = false
+    @State var showingNewUserView : Bool
     @ObservedObject var possibleBooks = possibleData()
     
     func newBook() -> Void {
@@ -35,13 +35,19 @@ struct BookList: View {
     
     var body: some View {
         if((possibleBooks.possibleBooks.count == 0)  && processSearch) {
-            getBookFromTitle(searchTerm: searchTerm, possibleBooks: possibleBooks)
-            processSearch = false
+            getBookFromTitle(searchTerm: searchTerm, possibleBooks: possibleBooks, userData: userData)
+//            processSearch = false
         }
-        if(possibleBooks.possibleBooks.count > 0){
+        if((possibleBooks.possibleBooks.count > 0) && processSearch){
             print("JSON PARSING WORKED")
             print(self.possibleBooks.possibleBooks)
+//            self.userData.books.append(self.possibleBooks.possibleBooks[0])
+//            self.showingNewUserView = true
             processSearch = false
+        }
+        print(self.showingNewUserView)
+        if(self.showingNewUserView){
+            print("TOGGLE WORKED (NOT REALLY THOUGH)")
         }
         return ZStack {
             VStack {
@@ -64,7 +70,10 @@ struct BookList: View {
                 }.navigationViewStyle(DoubleColumnNavigationViewStyle())
                 .padding()
                 
-
+                Text("SHEET VIEW").sheet(isPresented: $showingNewUserView) {
+                    BookSelection(isPresented: self.$showingNewUserView, userData: self.userData, books: self.possibleBooks)
+                }
+                
                 Button(action: {
                     self.image = nil
                     self.showCaptureImageView.toggle()
@@ -74,9 +83,7 @@ struct BookList: View {
                 }
                 .padding(.all, 15.0)
                 .background(/*@START_MENU_TOKEN@*/Color(hue: 1.0, saturation: 0.015, brightness: 0.92)/*@END_MENU_TOKEN@*/)
-//                .sheet(isPresented: $showingNewUserView) {
-//                    BookSelection()
-//                }
+                
             }.padding(.bottom, 20.0)
             
                 if (showCaptureImageView) {
@@ -91,6 +98,6 @@ struct BookList: View {
 
 struct BookList_Previews: PreviewProvider {
     static var previews: some View {
-        BookList(processSearch: false, searchTerm: "").environmentObject(UserData())
+        BookList(processSearch: false, searchTerm: "", showingNewUserView: false).environmentObject(UserData())
     }
 }

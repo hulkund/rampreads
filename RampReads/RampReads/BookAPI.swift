@@ -10,7 +10,7 @@ import Foundation
 
 //let dispatchGroup = DispatchGroup()
 import UIKit
-func getBookFromTitle(searchTerm: String, possibleBooks: possibleData) {
+func getBookFromTitle(searchTerm: String, possibleBooks: possibleData, userData: UserData) {
     var bookArray : [Book] = []
     
     //dispatchGroup.enter()
@@ -48,13 +48,12 @@ func getBookFromTitle(searchTerm: String, possibleBooks: possibleData) {
 
                         DispatchQueue.main.async {
 //                            if possibleBooks.possibleBooks.count == 0{
-                                for book in bookArray{
-                                    possibleBooks.possibleBooks.append(book)
-                                }
+                            userData.books.append(bookArray[0])
+                            for book in bookArray{
+                                possibleBooks.possibleBooks.append(book)
+                            }
 //                            }
                         }
-
-                    
                 }
                 else {
                     print("Bad Json Decoding")

@@ -41,7 +41,7 @@ func getBookFromTitle(searchTerm: String, possibleBooks: possibleData, userData:
                                 genres: item.volumeInfo.categories ?? ["N/A"],
                                 isFavorite: false,
                                 pageCount: item.volumeInfo.pageCount ?? -1,
-                                imageLink: item.volumeInfo.imageLinks.thumbnail ?? ""
+                                imageLink: item.volumeInfo.imageLinks.thumbnail ?? "http://books.google.com/books/content?id=2BMDuAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
                             ))
                         }
                     }

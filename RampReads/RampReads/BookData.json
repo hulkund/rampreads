@@ -10,23 +10,21 @@
         "publisher":"Bloomberg",
         "isFavorite": true,
         "pageCount":100,
-        "imageLink":"http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description":"Magic"
+        "imageLink":"http://books.google.com/books/content?id=gqX7rQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
         
     },
     {
         "id" : "000001",
-        "title": "HP",
+        "title": "Game of Thrones",
         "genres": ["Fantasy"],
-        "author": ["JK Rowling"],
+        "author": ["GRR Martin"],
         "description": "DESCRIPTION",
         "rating":5.0,
         "publishDate":"1997",
         "publisher":"Bloomberg",
         "isFavorite": false,
         "pageCount":100,
-        "imageLink":"http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-        "description":"fantasy"
+        "imageLink":"http://books.google.com/books/content?id=5NomkK4EV68C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     }
 ]
 

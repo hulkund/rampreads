@@ -22,6 +22,6 @@ struct Book:  Codable, Identifiable {
     var genres: [String]
     var isFavorite: Bool
     var pageCount: Int
-    var imageLink: ImageLinks
+    var imageLink: String
     
 }

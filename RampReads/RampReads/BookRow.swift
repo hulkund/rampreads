@@ -20,7 +20,7 @@ struct BookRow: View {
             VStack(alignment: .leading) {
                 Text(book.title)
                     .font(.headline)
-                Text(book.author)
+                Text(book.author.first!)
                     .font(.subheadline)
             }
             

@@ -34,13 +34,14 @@ func getBookFromTitle(searchTerm: String) -> Array<Book> {
                                 id: "001",
                                 title: item.volumeInfo.title,
                                 author: item.volumeInfo.authors,
+                                rating: -1.0,
                                 description: "DESCRIPTION",
-                                publishDate: item.volumeInfo.publishedDate,
-                                publisher: item.volumeInfo.publisher,
-                                genres: item.volumeInfo.categories,
+                                publishDate: item.volumeInfo.publishedDate ?? "N/A",
+                                publisher: item.volumeInfo.publisher ?? "N/A?",
+                                genres: item.volumeInfo.categories ?? ["N/A"],
                                 isFavorite: false,
-                                pageCount: item.volumeInfo.pageCount,
-                                imageLink: item.volumeInfo.imageLinks.thumbnail
+                                pageCount: item.volumeInfo.pageCount ?? -1,
+                                imageLink: item.volumeInfo.imageLinks.thumbnail ?? ""
                             ))
                         }
                     }
@@ -84,17 +85,17 @@ public struct Item: Codable {
 public struct VolumeInfo: Codable {
     let title: String
     let authors: [String]
-    let publisher, publishedDate, volumeInfoDescription: String
+    let publisher, publishedDate, volumeInfoDescription: String?
     let pageCount: Int?
     let printType: String?
     let categories: [String]?
     let maturityRating: String?
     let allowAnonLogging: Bool?
     let contentVersion: String?
-    let imageLinks: ImageLinks?
+    let imageLinks: ImageLinks
     let language: String?
     let previewLink: String?
-    let infoLink, canonicalVolumeLink: String?
+    let infoLink, canonicalVolumeLink: String
     enum CodingKeys: String, CodingKey {
         case title, authors, publisher, publishedDate
         case volumeInfoDescription = "description"
@@ -104,7 +105,7 @@ public struct VolumeInfo: Codable {
 
 // MARK: - ImageLinks
 public struct ImageLinks: Codable {
-    let smallThumbnail, thumbnail: String
+    let smallThumbnail, thumbnail: String?
 }
 
 

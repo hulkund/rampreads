@@ -45,7 +45,7 @@ struct ImageProcessor {
                 let searchTerm = formattedOcrText!
                 getBookFromTitle(searchTerm: searchTerm)
                 //preview books and choose book
-                addNewBook(data: self.userDataList)
+                //addNewBook(data: self.userDataList)
             } else {
                 print("bad formattedOcrText")
             }

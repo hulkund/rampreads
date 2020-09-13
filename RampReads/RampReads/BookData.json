@@ -2,85 +2,29 @@
     {
         "id" : "000000",
         "title": "Harry Potter",
-        "genres": "Fantasy",
-        "author": "JK Rowling",
+        "genres": ["Fantasy"],
+        "author": ["JK Rowling"],
         "description": "DESCRIPTION",
-        "rating":5,
+        "rating":5.0,
         "publishDate":"1997",
         "publisher":"Bloomberg",
-        "imageName": "harrypotter",
-        "isFavorite": true
+        "isFavorite": true,
+        "pageCount":100,
+        "imageLink":"http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
         "id" : "000001",
         "title": "HP",
-        "genres": "Fantasy",
-        "author": "JK Rowling",
+        "genres": ["Fantasy"],
+        "author": ["JK Rowling"],
         "description": "DESCRIPTION",
-        "rating":5,
+        "rating":5.0,
         "publishDate":"1997",
         "publisher":"Bloomberg",
-        "imageName": "harrypotter",
-        "isFavorite": false
-    },
-    {
-        "id" : "000002",
-        "title": "Harry pOTer",
-        "genres": "Fantasy",
-        "author": "JK Rowling",
-        "description": "DESCRIPTION",
-        "rating":5,
-        "publishDate":"1997",
-        "publisher":"Bloomberg",
-        "imageName": "harrypotter",
-        "isFavorite": false
-    },
-    {
-        "id" : "000003",
-        "title": "Harry Potter",
-        "genres": "Fantasy",
-        "author": "JK Rowling",
-        "description": "DESCRIPTION",
-        "rating":5,
-        "publishDate":"1997",
-        "publisher":"Bloomberg",
-        "imageName": "harrypotter",
-        "isFavorite": false
-    },
-    {
-        "id" : "000004",
-        "title": "Harry Potter",
-        "genres": "Fantasy",
-        "author": "JK Rowling",
-        "description": "DESCRIPTION",
-        "rating":5,
-        "publishDate":"1997",
-        "publisher":"Bloomberg",
-        "imageName": "harrypotter",
-        "isFavorite": false
-    },
-    {
-        "id" : "000005",
-        "title": "Harry Potter",
-        "genres": "Fantasy",
-        "author": "JK Rowling",
-        "description": "DESCRIPTION",
-        "rating":5,
-        "publishDate":"1997",
-        "publisher":"Bloomberg",
-        "imageName": "harrypotter",
-        "isFavorite": false
-    },
-    {
-        "id" : "000006",
-        "title": "Harry Potter",
-        "genres": "Fantasy",
-        "author": "JK Rowling",
-        "description": "DESCRIPTION",
-        "rating":5,
-        "publishDate":"1997",
-        "publisher":"Bloomberg",
-        "imageName": "harrypotter",
-        "isFavorite": false
+        "isFavorite": false,
+        "pageCount":100,
+        "imageLink":"http://books.google.com/books/content?id=DuNtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     }
 ]
+
+ 

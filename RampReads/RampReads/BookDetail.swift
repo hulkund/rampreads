@@ -35,7 +35,7 @@ struct BookDetail: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                 }
-                Text(book.author.first)
+                Text(book.author.first!)
                     .font(.title)
                     .fontWeight(.semibold)
                 Text("Book Rating: " + String(book.rating))

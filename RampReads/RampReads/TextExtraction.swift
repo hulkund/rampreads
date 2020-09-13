@@ -9,6 +9,8 @@
 import Foundation
 import Vision
 import UIKit
+import SwiftUI
+
 
 //let CONFIDENCE_THRESHOLD = 0.6
 
@@ -17,6 +19,7 @@ var ocrRequest = VNRecognizeTextRequest(completionHandler: nil)
 
 struct ImageProcessor {
     var userDataList: UserData
+    @Binding var searchTerm: String
     
     private func configureOCR() {
         ocrRequest = VNRecognizeTextRequest { (request, error) in
@@ -43,7 +46,9 @@ struct ImageProcessor {
             let formattedOcrText = ocrText.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if formattedOcrText != nil{
                 let searchTerm = formattedOcrText!
-                getBookFromTitle(searchTerm: searchTerm)
+                print("Self search term " + searchTerm)
+                self.searchTerm = searchTerm
+                print("Self search term " + self.searchTerm)
                 //preview books and choose book
                 //addNewBook(data: self.userDataList)
             } else {
@@ -62,16 +67,20 @@ struct ImageProcessor {
         ocrRequest.usesLanguageCorrection = true
     }
 
-    func processImage(image: UIImage) {
-        guard let cgImage = image.cgImage else { return }
+    func processImage(image: UIImage) -> String {
+        guard let cgImage = image.cgImage else { return ""}
         configureOCR()
         let requestHandler = VNImageRequestHandler(cgImage: cgImage)
         
         do {
             try requestHandler.perform([ocrRequest])
+            print("HERE")
+            print(self.searchTerm)
+            return self.searchTerm
         } catch let error {
             print(error)
         }
+        return ""
 
     }
 }

@@ -11,13 +11,19 @@ import Foundation
 import Vision
 import UIKit
 
+class possibleData: ObservableObject  {
+    @Published var possibleBooks: [Book] = []
+}
 
 struct BookList: View {
     
     @EnvironmentObject var userData: UserData
     @State var image: UIImage? = nil
     @State var showCaptureImageView: Bool = false
-    
+    @State var processSearch: Bool
+    @State var searchTerm: String
+    @State var showingNewUserView = false
+    @ObservedObject var possibleBooks = possibleData()
     
     func newBook() -> Void {
         addNewBook(data: userData)
@@ -28,7 +34,14 @@ struct BookList: View {
     }
     
     var body: some View {
-        ZStack {
+        if(processSearch){
+            getBookFromTitle(searchTerm: searchTerm, possibleBooks: possibleBooks)
+        }
+        if(possibleBooks.possibleBooks.count > 0){
+            print("JSON PARSING WORKED")
+            print(self.possibleBooks.possibleBooks)
+        }
+        return ZStack {
             VStack {
                 NavigationView{
                     List {
@@ -59,10 +72,13 @@ struct BookList: View {
                 }
                 .padding(.all, 15.0)
                 .background(/*@START_MENU_TOKEN@*/Color(hue: 1.0, saturation: 0.015, brightness: 0.92)/*@END_MENU_TOKEN@*/)
+//                .sheet(isPresented: $showingNewUserView) {
+//                    BookSelection()
+//                }
             }.padding(.bottom, 20.0)
             
                 if (showCaptureImageView) {
-                    CaptureImageView(isShown: $showCaptureImageView, image: $image, data: _userData)
+                    CaptureImageView(isShown: $showCaptureImageView, image: $image, data: _userData, doNewSearch: $processSearch, searchTerm: $searchTerm)
                 }
             
         }
@@ -73,6 +89,6 @@ struct BookList: View {
 
 struct BookList_Previews: PreviewProvider {
     static var previews: some View {
-        BookList().environmentObject(UserData())
+        BookList(processSearch: false, searchTerm: "").environmentObject(UserData())
     }
 }

@@ -19,7 +19,7 @@ struct ContentView: View {
 //        processImage(newImage!)
 //        NSLog("DONE")
         return VStack {
-            BookList().environmentObject(UserData())
+            BookList(processSearch: false, searchTerm: "").environmentObject(UserData())
         }
     
     }

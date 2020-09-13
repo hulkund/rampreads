@@ -7,12 +7,12 @@
 //
 var APIKey = "AIzaSyCJrwcCX--7aHrz8LIfh0p9Bu7zPHT_sBE"
 import Foundation
-var bookArray : [Book] = []
 
 //let dispatchGroup = DispatchGroup()
 import UIKit
-
-func getBookFromTitle(searchTerm: String) -> Array<Book> {
+func getBookFromTitle(searchTerm: String, possibleBooks: possibleData) {
+    var bookArray : [Book] = []
+    
     //dispatchGroup.enter()
 //    let searchTerm = "flowers+inauthor:keyes"
     let urlString = "https://www.googleapis.com/books/v1/volumes?q="+searchTerm+"&key="+APIKey
@@ -20,11 +20,12 @@ func getBookFromTitle(searchTerm: String) -> Array<Book> {
     if let url = URL(string: urlString)
     {
         print("Good URL")
-        URLSession.shared.dataTask(with: url){ data, res, err in
-            if let data = data {
+        URLSession.shared.dataTask(with: url){ jsonData, res, err in
+            if let jsonData = jsonData {
                 print("Now to start JSON decoding..")
+                print(jsonData)
                 let decoder = JSONDecoder()
-                if let json = try? decoder.decode(Welcome.self, from:data) {
+                if let json = try? decoder.decode(Welcome.self, from:jsonData) {
                     print("Decoded!")
                     var i = 0
                     for item in json.items {
@@ -45,6 +46,14 @@ func getBookFromTitle(searchTerm: String) -> Array<Book> {
                             ))
                         }
                     }
+
+                        DispatchQueue.main.async {
+                            for book in bookArray{
+                                possibleBooks.possibleBooks.append(book)
+                            }
+                        }
+
+                    
                 }
                 else {
                     print("Bad Json Decoding")
@@ -56,9 +65,7 @@ func getBookFromTitle(searchTerm: String) -> Array<Book> {
     else {
         print("Bad URL")
     }
-    return bookArray
-}
-
+    }
 
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:

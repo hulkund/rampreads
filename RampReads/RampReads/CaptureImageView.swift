@@ -14,9 +14,11 @@ struct CaptureImageView {
     @Binding var isShown: Bool
     @Binding var image: UIImage?
     @EnvironmentObject var data: UserData
+    @Binding var doNewSearch: Bool
+    @Binding var searchTerm: String
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(isShown: $isShown, image: $image, data: _data)
+        return Coordinator(isShown: $isShown, image: $image, searchTerm: $searchTerm, doSearch: $doNewSearch, data: _data)
     }
 }
 

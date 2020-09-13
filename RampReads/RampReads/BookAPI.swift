@@ -12,25 +12,7 @@ import Foundation
 //let dispatchGroup = DispatchGroup()
 import UIKit
 
-public struct Response: Codable { // or Decodable
-    var results:[Result]
-}
 
-public struct Result: Codable {
-    var title: String
-    var author: String
-}
-/**
-public func viewDidLoad() {
-    getBookFromTitle{ (json) in
-        print("finished")
-    }
-    
-    dispatchGroup.notify(queue: .main){
-        print("all finished")
-    }
-}
- **/
 
 public func getBookFromTitle(searchTerm: String){
     //dispatchGroup.enter()
@@ -42,12 +24,13 @@ public func getBookFromTitle(searchTerm: String){
         print("Good URL")
         URLSession.shared.dataTask(with: url){ data, res, err in
             if let data = data {
-                let decoder = JSONDecoder()
+                print(data)
                 print("Now to start JSON decoding..")
-                if let json = try? JSONSerialization.jsonObject(with: data, options: []){
-                    //completion(json)
-                    print("Could decode JSON!")
-                    print(json)
+                //if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]{
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode(Welcome.self, from:data) {
+                    print("hello")
+                    print(json.items[0].volumeInfo.title)
                 }
                 else {
                     print("Bad Json Decoding")
@@ -60,3 +43,54 @@ public func getBookFromTitle(searchTerm: String){
         print("Bad URL")
     }
 }
+
+
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
+
+
+// MARK: - Welcome
+struct Welcome: Codable {
+    let kind: String?
+    let totalItems: Int?
+    let items: [Item]
+}
+
+// MARK: - Item
+struct Item: Codable {
+    let kind, id, etag: String
+    let selfLink: String?
+    let volumeInfo: VolumeInfo
+}
+
+
+// MARK: - VolumeInfo
+struct VolumeInfo: Codable {
+    let title: String
+    let authors: [String]
+    let publisher, publishedDate, volumeInfoDescription: String
+    let pageCount: Int?
+    let printType: String?
+    let categories: [String]?
+    let maturityRating: String?
+    let allowAnonLogging: Bool?
+    let contentVersion: String?
+    let imageLinks: ImageLinks?
+    let language: String?
+    let previewLink: String?
+    let infoLink, canonicalVolumeLink: String?
+    enum CodingKeys: String, CodingKey {
+        case title, authors, publisher, publishedDate
+        case volumeInfoDescription = "description"
+        case pageCount, printType, categories, maturityRating, allowAnonLogging, contentVersion,  imageLinks, language, previewLink, infoLink, canonicalVolumeLink
+    }
+}
+
+// MARK: - ImageLinks
+struct ImageLinks: Codable {
+    let smallThumbnail, thumbnail: String
+}
+
+
